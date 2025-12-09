@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Relatórios — InfoGest</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+  <script src="https://cdn.userway.org/widget.js" data-account="SEU_CODIGO_AQUI"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <aside>
+    <img src="image/fechar.png" alt="fechar" id="fechar">
+    <h2>InfoGest</h2>
+    <nav>
+      <ul>
+        <li><img src="image/medicina.png" alt="icone remedio"><a href="index.html">Listagem de medicamentos</a></li>
+        <li><img src="image/painel.png" alt="icone painel"><a href="deshboard.html">Dashboarding</a></li>
+        <li><img src="image/analise-de-dados.png" alt="icone relatorio"><a href="relatorios.html">Relatórios</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main>
+    <img src="image/casa.png" alt="menu" id="menu">
+    <h1>Relatórios</h1>
+    <div class="container-info-rel">
+  <div class="field">
+    <label for="relatorio">Tipo de Relatório:</label>
+    <select id="relatorio" class="filtro-campo">
+      <option value="completo">Relatório Completo</option>
+      <option value="tendencias">Tendências de Cadastros</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="start-date">Data Inicial:</label>
+    <input type="date" id="start-date" required>
+  </div>
+
+  <div class="field">
+    <label for="end-date">Data Final:</label>
+    <input type="date" id="end-date" required>
+  </div>
+
+  <div class="field">
+    <label for="autor">Autor:</label>
+    <input type="text" id="autor" placeholder="Nome do autor">
+  </div>
+
+  <div class="field">
+    <label for="unidade">Unidade:</label>
+    <input type="text" id="unidade" placeholder="Nome da Unidade">
+  </div>
+
+  <div class="field">
+    <label for="emissao">Data de emissão:</label>
+    <input type="date" id="emissao" readonly>
+  </div>
+
+  <div class="field full">
+    <button id="generate-preview">Gerar Relatório</button>
+  </div>
+</div>
+
+
+    <!-- Aqui o script injeta a tabela ou gráficos -->
+    <div id="relatorio-content" class="rel-texto" style="margin-top:18px; display:none;"></div>
+  </main>
+</body>
+</html>

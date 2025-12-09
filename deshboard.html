@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciador de medicamentos</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+  <script src="https://cdn.userway.org/widget.js" data-account="SEU_CODIGO_AQUI" ></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <aside>
+    <img src="image/fechar.png" alt="fechar" id="fechar">
+    <h2>InfoGest</h2>
+    <nav>
+      <ul>
+          <li><img src="image/medicina.png" alt="icone remedio"><a href="index.html">Listagem de medicamentos</a></li>
+          <li><img src="image/painel.png" alt="icone painel"><a href="deshboard.html">Dashboarding</a></li>
+          <li><img src="image/analise-de-dados.png" alt="icone relatorio"><a href="relatorios.html">Relatórios</a></li>
+    </ul>
+    </nav>
+  </aside>
+
+  <main>
+    <img src="image/casa.png" alt="menu" id="menu">
+    <h1>Dashboard de Medicamentos</h1>
+
+    <!-- Filtros -->
+      Categoria:
+    <select id="apresentacaoCategoria">
+      <option value="">Forma de Apresentação</option>
+      <option value="oral_solida">Oral sólida</option>
+      <option value="oral_liquida">Oral líquida</option>
+      <option value="injetavel">Injetável</option>
+      <option value="topica">Tópica</option>
+      <option value="ocular_otica">Ocular / Ótica</option>
+      <option value="retal_vaginal">Retal / Vaginal</option>
+      <option value="outros">Outros</option>
+    </select>
+      Categoria:
+      <select id="viaCategoria">
+      <option value="">Via de administração</option>
+      <option value="oral">Oral</option>
+      <option value="parenteral">Parenteral</option>
+      <option value="topica_transdermica">Tópica / Transdérmica</option>
+      <option value="mucosas">Mucosas</option>
+      <option value="inalatoria">Inalatória</option>
+    </select>
+    Controle de medicação
+    <select id="controlado">
+      <option value="">Medicamento controlado?</option>
+      <option value="sim">Sim</option>
+      <option value="nao">Não</option>
+    </select>
+    Tipo de Gráfico
+    <select id="tipoGrafico">
+      <option value="bar">Barras</option>
+      <option value="pie">Pizza</option>
+      <option value="line">Linha</option>
+      <option value="polarArea">Área Polar</option>
+    </select>
+
+    <img src="image/filtro-limpo.png" alt="" id="filtro"><button id="btn-new" onclick="openCadastroModal()">Novo Medicamento</button>
+
+    <!-- Gráficos -->
+    <div class="container-tabela-Graph">
+      <div class="divGraph"><canvas id="grafico1"></canvas></div>
+      <div class="divGraph"><canvas id="grafico2"></canvas></div>
+      <div class="divGraph"><canvas id="grafico3"></canvas></div>
+      <div class="divGraph"><canvas id="grafico4"></canvas></div>
+    </div>
+  </main>
+</body>
+</html>

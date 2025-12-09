@@ -1,0 +1,423 @@
+body {
+    display: flex;
+    margin: 0;
+    min-height: 100vh;
+}
+
+aside {
+    width: 18%;
+    height: 100vh; 
+    background-color: rgb(94, 190, 245);
+    position: sticky;
+    top: 0;
+}
+aside h2 {
+    padding: 0 8px;
+    text-indent: 20px;
+    
+}
+#menu {
+    display: none;
+    width: 45px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+      
+}
+#fechar {
+    width: 40px;
+    float: right;
+    display: none
+}
+nav ul {
+    padding: 0;
+    list-style: none;
+    
+}
+nav ul li {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; 
+    gap: 8px; 
+    padding: 20px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    
+}
+nav ul li a{
+    text-decoration: none;
+    color: inherit;
+}
+nav ul li:hover {
+    background-color: #d1fffb;
+}
+nav li img {
+    width: 25px;
+    margin-left: 0; 
+    vertical-align: middle;
+}
+main {
+    width: 82%;
+    padding: 0 20px;
+    background-color: rgb(233, 233, 233);
+    box-sizing: border-box;
+}
+.pesquisa {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+.pesquisa #input-pesquisa {
+    width: 40%;
+    padding: 5px 30px 5px 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: transparent;
+    background-image: url('image/procurar.png');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px 20px;
+    cursor: pointer;
+}
+.pesquisa #input-pesquisa:hover {
+    background-color: #e0e0e0;
+}
+#apresentacao, #via, #apresentacaoCategoria, #viaCategoria, #controlado, 
+#tipoGrafico,#relatorio, #start-date, #end-date, #autor, #unidade, #emissao{
+    margin: 20px;
+    margin-left: 0;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.apresentacao text {
+    margin: 0;
+    color: #dc3545;
+}
+#filtro {
+    width: 25px;
+    margin-right: 20px; 
+    vertical-align: middle;
+    cursor: pointer;
+}
+#btn-new, #generate-preview{
+    padding: 8px;
+    background-color: rgb(227, 255, 255);
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0px 20px;
+    font-size: 15px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; 
+}
+tr th, tr td {
+    padding: 15px 2px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    vertical-align: middle;
+    word-wrap: break-word; /* Quebra texto longo */
+}
+tr th {
+    background-color: #f0f0f0;
+    font-size: 18px;
+    width: 16.66%;
+}
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+}
+.controlled::after {
+    content: ' 🔒';
+    color: #dc3545;
+    margin-left: 5px;
+}
+.container-tabela {
+    background-color: rgb(252, 252, 252);
+    padding: 20px;
+    border-radius: 5px;
+}
+.edit-btn, .delete-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.edit-btn img, .delete-btn img {
+    width: 20px;
+}
+
+/* Estilos para o modal */
+.modal-input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.input-error {
+    border: 2px solid red !important;
+    background-color: #ffe6e6;
+}
+
+/*Deshboards*/
+.container-tabela-Graph {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 400px; /* altura fixa para cada linha */
+  gap: 10px;
+  padding: 10px;
+}
+.divGraph {
+    width: 100%; 
+    height: 400px; 
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #e6fffd;
+}
+#grafico1, #grafico2, #grafico3, #grafico4 {
+    max-width: 100%; 
+    height: 100%;
+    padding: 0px;
+    box-sizing: border-box;
+    margin: 8px
+}
+.chart-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.chart-card canvas {
+  max-width: 100%;
+  max-height: 100%;
+}
+.table-wrap {
+  background: #ffffff;
+  padding: 15px;       
+  border-radius: 6px;
+}
+.relatorio-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent; 
+}
+.relatorio-tabela th,
+.relatorio-tabela td {
+  padding: 10px;       
+  background: transparent;
+  color: white;        
+  text-align: left;
+  color: black;
+}
+.container-info-rel {
+  display: grid;
+  grid-template-columns: 150px 1fr; 
+  gap: 8px 16px; 
+  align-items: center; 
+}
+.container-info-rel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+@media screen and (max-width: 1300px) {
+    #controlado {
+        margin-right: 130px;
+    }
+}
+@media screen and (max-width: 900px) { 
+    aside {
+    width: 24%;
+    }
+    main {
+        width: 76%;
+    }
+    #btn-new, #generate-preview{
+    padding: 5px;
+    background-color: rgb(227, 255, 255);
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 20px;
+    font-size: 15px;
+}
+    #filtro {
+        width: 25px;
+        margin: 0 20px; 
+        vertical-align: middle;
+        cursor: pointer;
+    }
+}
+@media screen and (max-width: 770px) { 
+    aside {
+        width: 26%;
+    }
+    main {
+        width: 74%;
+        padding: 0 5px;
+    }
+    .container-tabela-Graph {
+        grid-template-columns: 1fr; /* Já está correto para 1 coluna nos gráficos */
+    }
+    .container-filtros {
+        display: flex !important;
+        flex-direction: column !important; /* Força uma única coluna */
+        gap: 12px;
+        align-items: flex-start;
+    }
+    /* cada par label+control em uma linha, ocupando toda a largura */
+    .field {
+        display: flex !important;
+        flex-direction: row !important; /* Mantém label e select/input na horizontal dentro do field */
+        align-items: center;
+        gap: 8px;
+        width: 100%; /* Garante que cada field ocupe a largura total */
+        box-sizing: border-box;
+    }
+    /* Garante que label não quebre linha */
+    .field label {
+        display: inline-block !important;
+        white-space: nowrap;
+        margin: 0;
+        font-weight: 500;
+    }
+    /* Ajusta select/input para ocupar o espaço restante */
+    .field select,
+    .field input {
+        flex: 1 1 auto; /* Ocupa o espaço restante no field */
+        min-width: 140px;
+        max-width: 100%; /* Evita ultrapassar a largura do contêiner */
+    }
+    /* Controles (botão, ícone) ficam juntos */
+    .field.controls-field {
+        flex: 0 1 auto;
+        width: 100%; /* Garante que o botão/icones ocupem toda a largura */
+    }
+}
+@media screen and (max-width: 450px) { 
+    aside {
+        display: block;
+        position: fixed;
+        left: -100%;
+        top: 0;
+        height: 100vh;
+        width: 250px; /* Largura do sidebar */
+        transition: left 0.3s ease;
+        z-index: 1000;
+    }
+    aside.open {
+        left: 0;
+    }
+    main {
+        width: 100%;
+    }
+    #apresentacao, #via, #apresentacaoCategoria, #viaCategoria, #controlado, 
+#tipoGrafico,#relatorio, #start-date, #end-date, #autor, #unidade, #emissao{
+        width: 100%;
+        margin: 10px 0;
+        padding: 4px;
+        margin-top: 0;
+    }
+    .container-filtros {
+        gap: 8px;
+    }
+    .field label {
+        font-size: 14px;
+    }
+    .field select,
+    .field input {
+        font-size: 14px;
+        padding: 4px;
+    }
+    #btn-new, #generate-preview {
+        padding: 6px;
+        font-size: 14px;
+        margin: 10px 0;
+    }
+    #menu {
+        display: block;
+    }
+    #fechar {
+        display: block;
+    }
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+    h2 {
+      font-size: 16px !important;
+    }
+    .relatorio-tabela {
+      font-size: 12px !important;
+    }
+    .relatorio-tabela th,
+    .relatorio-tabela td {
+      font-size: 12px !important;
+    }
+    .pesquisa {
+        padding: 20px;
+        margin: 10px;
+        max-width: 100%;
+    }
+}
+
+/*relatorio*/
+@media print {
+#print-report, #close-report { display: none !important; }
+html, body { height: 100%; margin: 0; padding: 0; }
+body { display: flex; justify-content: center; align-items: center; }
+body > *:not(.modal) { display: none !important; }
+.modal {
+display: block !important;
+position: static !important;
+background: none !important;
+width: 100% !important;
+height: auto !important;
+padding: 0 !important;
+margin: 0 !important;
+overflow: visible !important;
+}
+.modal > div {
+width: 100% !important;
+max-width: none !important;
+height: auto !important;
+overflow: visible !important;
+padding: 10mm !important; /* Adiciona margem para impressão */
+box-sizing: border-box !important;
+background: white !important;
+border-radius: 0 !important;
+}
+/* expandir tabela do modal e do conteúdo da página */
+#relatorio-content,
+#report-summary,
+#report-table-body,
+.rel-texto,
+.modal div {
+max-height: none !important;
+overflow: visible !important;
+}
+table { page-break-inside: auto; }
+tr { page-break-inside: avoid; page-break-after: auto; }
+}
+#report-table-body td, #report-table-body th {
+padding: 2px 4px !important;
+font-size: 12px !important;
+}
